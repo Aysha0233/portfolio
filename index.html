@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Aysha's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a40 0%, #23235b 100%);
+            color: white;
+            font-family: 'poppins', sans-serif;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            background: rgba(4, 4, 78, 0.95);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 0 40px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li {
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.2s, color 0.2s, font-size 0.2s;
+        }
+
+        nav ul li a:hover {
+            color: #8b46cb;
+            background: #fff2;
+            font-size: 1.08rem;
+        }
+
+        nav ul li a.active {
+            background: #8b46cb;
+            color: #fff;
+        }
+
+        .left {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .firstSection {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 80px 0 40px 0;
+            padding: 0 5vw;
+            min-height: 60vh;
+        }
+
+        .firstSection>div {
+            width: 45%;
+            margin: 0;
+        }
+
+        .leftSection {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .rightSection img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 4px 24px #0005;
+        }
+
+        .purple,
+        #element {
+            color: #8b46cb;
+            font-weight: 600;
+        }
+
+        hr {
+            border: 0;
+            background: rgb(90, 64, 90);
+            height: 1.2px;
+            margin: 40px 10vw;
+        }
+
+        .secondSection {
+            max-width: 80vw;
+            margin: 0 auto 40px auto;
+            background: rgba(34, 34, 85, 0.7);
+            border-radius: 16px;
+            box-shadow: 0 2px 12px #0002;
+            padding: 32px 24px;
+        }
+
+        .secondSection h1 {
+            color: #8b46cb;
+            margin-bottom: 16px;
+        }
+
+        .secondSection ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+
+        .secondSection ul li {
+            background: #333366;
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .secondSection>div[style*='display: flex']>div {
+            background: #222255;
+            padding: 20px;
+            border-radius: 12px;
+            min-width: 200px;
+            box-shadow: 0 2px 8px #0002;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .secondSection>div[style*='display: flex']>div:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px #0004;
+        }
+
+        form input,
+        form textarea {
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        form button {
+            display: none !important;
+        }
+
+        footer {
+            background: #18183a;
+            color: #fff;
+            text-align: center;
+            padding: 24px 0 12px 0;
+            margin-top: 40px;
+            border-top: 1px solid #333366;
+        }
+
+        footer a {
+            color: #8b46cb;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .contact-success {
+            color: #8b46cb;
+            background: #23235b;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            .firstSection {
+                flex-direction: column;
+                text-align: center;
+                padding: 0 2vw;
+            }
+
+            .firstSection>div {
+                width: 100%;
+                margin: 20px 0;
+            }
+
+            .rightSection img {
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .firstSection {
+                margin: 40px 0 20px 0;
+            }
+
+            .secondSection {
+                padding: 16px 6px;
+            }
+
+            hr {
+                margin: 24px 2vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Aysha's Portfolio</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="firstSection">
+            <div class="leftSection">
+                Hi, My name is <span class="purple">Aysha</span>
+                <div>and I am a passionate</div>
+                <span id="element"></span>
+            </div>
+            <div class="rightSection">
+                <img src="developer.png" alt="">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>Connect with me:
+            <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/" target="_blank">GitHub</a>
+            <a href="https://twitter.com/" target="_blank">Twitter</a>
+            <a href="https://instagram.com/your_instagram_handle" target="_blank">Instagram</a>
+        </div>
+        <div style="margin-top: 10px;">&copy; 2025 Aysha. All rights reserved.</div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'Content Creator', 'Web Designer'],
+            typeSpeed: 50,
+        });
+    </script>
+</body>
+
+</html>
